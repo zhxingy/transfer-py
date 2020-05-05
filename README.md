@@ -1,4 +1,4 @@
-# 原力流媒体直播流传输工具transferAPI的python封装
+# Transfer API for python
 
 ### 下载
 ```angular2
@@ -8,17 +8,27 @@ git clone https://github.com/zhxingy/transfer-py
 ```angular2
 python setup.py install
 ```
-### 使用
+
+### 测试
+```
+from transfer import TEST
+
+if __name__ == '__main__':
+    test = TEST(service="http://127.0.0.1:8080", user="admin", password="admin")
+    test.run()
+```
+
+### 简单使用
 ```angular2
 from transfer import Transfer, TransferError
 
-ts = Transfer(service="http://127.0.0.1:8080", user="admin", password="admin")
-try:
-    print ts.index()
-except TransferError as err:
-    print err
+if __name__ == '__main__':
+    ts = Transfer(service="http://127.0.0.1:8080", user="admin", password="admin")
+    try:
+        print ts.index()
+    except TransferError as err:
+        print err
 
 ```
 
-
-
+### [文档](https://github.com/zhxingy/transfer-py/blob/master/API.md)
